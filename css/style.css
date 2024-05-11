@@ -301,20 +301,22 @@ footer p {
     font-family: "Lato";
 }
 
-footer p a {
+footer a:link {
     color: rgb(19, 50, 96);
 }
 
 footer a:visited {
-    color: rgb(19, 50, 96);
-    
+    color: rgb(19, 50, 96);   
+}
+
+footer a:hover {
+    color: rgb(8, 31, 66);   
 }
 
 
 
 .enquires {
-    background-color: #d17416;
-    color: black;
+    background-color: rgb(9, 30, 61);
     padding: 2em;
     margin-top: 3em;
     text-align: center;
@@ -323,20 +325,21 @@ footer a:visited {
 a.button {
     display: block;
     padding: 1em;
-    color: white;
-    background-color: rgb(19, 50, 96);
+    color: black;
+    background-color: #d17416;
     margin: 2em auto 0 auto;
     width: fit-content;
     text-decoration: none;
 }
 
 a.button:hover {
-    background-color: rgb(3, 25, 57);
+    background-color: #92500e;
+    color: black;
 }
 
 a.button:visited {
     background-color: rgb(19, 50, 96);
-    color: white;
+    color: black;
 }
 
 li {

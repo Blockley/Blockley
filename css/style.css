@@ -134,7 +134,7 @@ body {
     background-color: rgb(19, 50, 96);
     font-family: "Merriweather", serif;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6em;
     padding: 0;
     color: rgb(172, 159, 141);
@@ -160,6 +160,12 @@ a:active {
 main {
     padding: 2em;
     text-align: center;
+}
+
+img {
+    max-width: 100%;
+    max-height: 28em;
+    margin: 2em 0 0 0;
 }
 
 nav {
@@ -216,29 +222,26 @@ h1 {
     margin-bottom: 1em;
 }
 
-h2 {
-    font-size: 1.75em;
-    line-height: 1.5em;
-    font-family: "Lato";
-}
 
-h3 {
+h2 {
     font-weight: 400;
+    font-size: 1.2em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-family: "Lato";
     margin-bottom: -0.25em;
-    margin-top: 1em;
+    margin-top: 3.5em;
 }
 
 p {
-    margin-top: 0.75em;
+    margin-top: 2em;
+    line-height: 2em
 }
 
 .container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 44rem;
+    max-width: 50rem;
 }
 
 .logo {
@@ -317,7 +320,7 @@ footer a:hover {
 
 .enquires {
     background-color: rgb(9, 30, 61);
-    padding: 2em;
+    padding: 2em 0 4em 0;
     margin-top: 3em;
     text-align: center;
 }
@@ -348,4 +351,51 @@ li {
 
 .no-underline {
     text-decoration: none;
+}
+
+form {
+    margin-top: 3em
+}
+
+label {
+    display: block;
+    font-family: lato;
+    font-weight: 00;
+    margin-top: 1em;
+}
+
+input {
+    display: block;
+    border: 1px solid;
+    border-radius: 1em;
+    border-color: rgb(160, 151, 133);
+    color: rgb(160, 151, 133);
+    padding: 1em;
+    min-width: 30em;
+    margin: 0.2em auto 0 auto;
+    background-color: rgb(19, 50, 96);
+
+}
+
+textarea {
+    display: block;
+    margin: auto;
+    min-height: 8em;
+    min-width: 30em;
+    background-color: rgb(19, 50, 96);
+   border-color: rgb(160, 151, 133);
+    color: rgb(160, 151, 133);
+    border: 1px solid;
+    border-radius: 1em;
+}
+
+button {
+    padding: 1em 3em;
+    margin: 2em;
+    border: 1px solid;
+    border-radius: 1em;
+    border-color: rgb(160, 151, 133);
+    background-color: rgb(160, 151, 133); 
+    color: rgb(19, 50, 96);
+    size: 4em;
 }

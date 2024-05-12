@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Merriweather:300, 400");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300, 600");
 
 @import url("https://fonts.googleapis.com/css?family=Lato");
 
@@ -131,13 +131,17 @@ table {
 /* ----- */
 
 body {
-    background-color: rgb(19, 50, 96);
+    background-color: rgb(9, 30, 61);
     font-family: "Merriweather", serif;
     font-weight: 300;
     font-size: 16px;
     line-height: 1.6em;
     padding: 0;
     color: #A49B89;
+}
+
+strong {
+    font-weight: 600;
 }
 
 a:link {
@@ -171,7 +175,7 @@ img {
 nav {
     background-color: rgb(160, 151, 133);
     font-family: Lato, sans-serif;
-    color: rgb(19, 50, 96);
+    color: rgb(9, 30, 61);
     text-align: center;
 }
 
@@ -187,7 +191,7 @@ nav ul li {
 
 nav ul li a:link {
     text-decoration: none;
-    color: rgb(19, 50, 96);
+    color: rgb(9, 30, 61);
     display: inline-block;
     padding: 1em 0.9em;
     margin: 0 0.1em;
@@ -205,13 +209,13 @@ nav ul li:hover {
 
 nav ul li a:hover,
 nav ul li a:active {
-    background-color: rgb(9, 30, 61);
+    background-color: rgb(4, 16, 34);
     color: #A49B89;
     text-decoration: none;
 }
 
 nav ul li a.active {
-    background-color: rgb(9, 30, 61);
+    background-color: rgb(4, 16, 34);
     color: #A49B89;
     text-decoration: none;
 }
@@ -236,6 +240,10 @@ h2 {
 p {
     margin-top: 2em;
     line-height: 2em
+}
+
+p.small {
+    font-size: 0.7em;
 }
 
 .container {
@@ -293,23 +301,24 @@ section {
 }
 
 footer {
-    font-size: 0.7em;
+    font-size: 0.8em;
     background-color: rgb(160, 151, 133);
-    color: rgb(19, 50, 96);
+    color: rgb(9, 30, 61);
     padding: 2em;
     margin-top: 0;
 }
 
 footer p {
     font-family: "Lato";
+    margin: 1em 0;
 }
 
 footer a:link {
-    color: rgb(19, 50, 96);
+    color: rgb(9, 30, 61);
 }
 
 footer a:visited {
-    color: rgb(19, 50, 96);   
+    color: rgb(9, 30, 61);
 }
 
 footer a:hover {
@@ -319,7 +328,7 @@ footer a:hover {
 
 
 .enquires {
-    background-color: rgb(9, 30, 61);
+    background-color: rgb(4, 16, 34);
     padding: 2em 0 4em 0;
     margin-top: 3em;
     text-align: center;

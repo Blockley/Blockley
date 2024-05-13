@@ -408,3 +408,7 @@ button {
     color: rgb(19, 50, 96);
     size: 4em;
 }
+
+.hbspt-form {
+    margin-top: 2em;
+}

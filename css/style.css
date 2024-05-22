@@ -416,3 +416,8 @@ button {
 .chartermark {
    margin: 0.5em 0 1em 0;
 }
+
+.chatermark img {
+   height: 150px;
+   width: 150px;
+}

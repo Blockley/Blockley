@@ -212,6 +212,11 @@ nav ul li a:active {
     text-decoration: none;
 }
 
+nav ul li a:visited {
+   color: rgb(9, 30, 61);
+   text-decoration: none;
+}
+
 
 h1 {
     font-size: 1.75em;

@@ -212,11 +212,6 @@ nav ul li a:active {
     text-decoration: none;
 }
 
-nav ul li a.active {
-    background-color: rgb(6, 24, 51);
-    color: #A49B89;
-    text-decoration: none;
-}
 
 h1 {
     font-size: 1.75em;

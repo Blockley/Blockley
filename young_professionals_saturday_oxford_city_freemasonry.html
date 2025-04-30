@@ -34,7 +34,7 @@
         <main>
           <section class="intro">
             <h1>Saturday Freemasonry in Oxford</h1>
-                        <p>Our next meeting will be: <strong><span id="meeting-date">Calculating...</span></strong>
+                        <p>Our next meeting is <strong><span id="meeting-date">Calculating...</span></strong>
               <p>Blockley Lodge meets five times per year on the second Saturday in February and March, the last Saturday in July, and the third Saturday in October and&nbsp;November.</p>
             <p>We meet at the Oxford Masonic Centre, Cardinal House, 2-4 Baldon Lane, Marsh Baldon, Oxford OX44 9LT. The centre is accessible from the city using the <a href="https://www.oxfordbus.co.uk/services/THTR/X40">X40 River Rapids Bus</a>. There is also ample secure car parking at the&nbsp;centre.</p>
  <img src="img/lodge.jpg" alt="A Lodge Room">
@@ -60,15 +60,15 @@
         </div>
       </footer>
       </div>
-       <script>
+   <script>
     function getNextMeetingDate(today = new Date()) {
       const year = today.getFullYear();
       const meetingSpecs = [
-        { month: 1,  ordinal: 2 },      // February
-        { month: 2,  ordinal: 2 },      // March
+        { month: 1,  ordinal: 3 },      // February
+        { month: 2,  ordinal: 3 },      // March
         { month: 6,  ordinal: 'last' }, // July
-        { month: 9,  ordinal: 3 },      // October
-        { month: 10, ordinal: 3 }       // November
+        { month: 9,  ordinal: 2 },      // October
+        { month: 10, ordinal: 2 }       // November
       ];
 
       function getNthSaturday(year, month, n) {
@@ -104,10 +104,11 @@
       return meetingDates.sort((a, b) => a - b)[0];
     }
 
-    // Display the result in the page
+    // Format the date: Saturday, February 17, 2024
     const nextMeeting = getNextMeetingDate();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     document.getElementById("meeting-date").textContent =
-      nextMeeting.toDateString();
+      nextMeeting.toLocaleDateString(undefined, options);
   </script>
     </body>
 </html>

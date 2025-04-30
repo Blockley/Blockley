@@ -64,11 +64,11 @@
     function getNextMeetingDate(today = new Date()) {
       const year = today.getFullYear();
       const meetingSpecs = [
-        { month: 1,  ordinal: 3 },      // February
-        { month: 2,  ordinal: 3 },      // March
+        { month: 1,  ordinal: 2 },      // February
+        { month: 2,  ordinal: 2 },      // March
         { month: 6,  ordinal: 'last' }, // July
-        { month: 9,  ordinal: 2 },      // October
-        { month: 10, ordinal: 2 }       // November
+        { month: 9,  ordinal: 3 },      // October
+        { month: 10, ordinal: 3 }       // November
       ];
 
       function getNthSaturday(year, month, n) {

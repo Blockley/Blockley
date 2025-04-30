@@ -197,7 +197,7 @@ nav ul li a:link {
     margin: 0 0.5em;
 }
 
-nav ul li a:visited a {
+nav ul li a:visited {
     text-decoration: none;
     color: rgb(9, 30, 61);
 }
@@ -210,11 +210,6 @@ nav ul li:hover a {
 nav ul li a:hover,
 nav ul li a:active {
     text-decoration: none;
-}
-
-nav ul li a:visited {
-   color: rgb(9, 30, 61);
-   text-decoration: none;
 }
 
 

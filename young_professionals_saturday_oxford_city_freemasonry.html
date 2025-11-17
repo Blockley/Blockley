@@ -60,55 +60,60 @@
         </div>
       </footer>
       </div>
-   <script>
-    function getNextMeetingDate(today = new Date()) {
-      const year = today.getFullYear();
-      const meetingSpecs = [
-        { month: 1,  ordinal: 2 },      // February
-        { month: 2,  ordinal: 2 },      // March
-        { month: 6,  ordinal: 'last' }, // July
-        { month: 9,  ordinal: 3 },      // October
-        { month: 10, ordinal: 3 }       // November
-      ];
+<script>
+  function getNextMeetingDate(today = new Date()) {
+    const year = today.getFullYear();
 
-      function getNthSaturday(year, month, n) {
-        const saturdays = [];
-        const date = new Date(year, month, 1);
+    // Meeting rules
+    const meetingSpecs = [
+      { month: 1,  ordinal: 2 },      // February (2nd Saturday)
+      { month: 2,  ordinal: 2 },      // March (2nd Saturday)
+      { month: 6,  ordinal: 'last' }, // July (Last Saturday)
+      { month: 9,  ordinal: 3 },      // October (3rd Saturday)
+      { month: 10, ordinal: 3 }       // November (3rd Saturday)
+    ];
 
-        while (date.getMonth() === month) {
-          if (date.getDay() === 6) saturdays.push(new Date(date));
-          date.setDate(date.getDate() + 1);
+    // Finds the Nth (or last) Saturday in a month
+    function getNthSaturday(year, month, order) {
+      const saturdays = [];
+      const date = new Date(year, month, 1);
+
+      while (date.getMonth() === month) {
+        if (date.getDay() === 6) {
+          saturdays.push(new Date(date));
         }
-
-        if (n === 'last') {
-          return saturdays[saturdays.length - 1];
-        } else {
-          return saturdays[n - 1];
-        }
+        date.setDate(date.getDate() + 1);
       }
 
-      const meetingDates = [];
-
-      for (const spec of meetingSpecs) {
-        let date = getNthSaturday(year, spec.month, spec.ordinal);
-        if (date >= today) {
-          meetingDates.push(date);
-        }
-      }
-
-      // If no upcoming meeting this year, check next year's February
-      if (meetingDates.length === 0) {
-        return getNthSaturday(year + 1, 1, 3);
-      }
-
-      return meetingDates.sort((a, b) => a - b)[0];
+      return order === "last"
+        ? saturdays[saturdays.length - 1]
+        : saturdays[order - 1];
     }
 
-    // Format the date: Saturday, February 17, 2024
-    const nextMeeting = getNextMeetingDate();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    document.getElementById("meeting-date").textContent =
-      nextMeeting.toLocaleDateString(undefined, options);
-  </script>
+    // Collect valid upcoming meetings for the current year
+    const meetingDates = meetingSpecs
+      .map(spec => getNthSaturday(year, spec.month, spec.ordinal))
+      .filter(date => date >= today);
+
+    // If none remain this year, next meeting is next year's February (2nd Saturday)
+    if (meetingDates.length === 0) {
+      return getNthSaturday(year + 1, 1, 2);
+    }
+
+    // Otherwise return the earliest upcoming meeting
+    return meetingDates.sort((a, b) => a - b)[0];
+  }
+
+  const nextMeeting = getNextMeetingDate();
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  };
+
+  document.getElementById("meeting-date").textContent =
+    nextMeeting.toLocaleDateString(undefined, options);
+</script>
     </body>
 </html>
